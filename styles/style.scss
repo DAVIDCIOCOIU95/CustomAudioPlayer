@@ -1,0 +1,185 @@
+$track-color: #222268;
+$track-height: 3.2px;
+$track-border-radius: 10px;
+
+$thumb-color:#FD6D04;
+$thumb-border: 2.5px solid white;
+$thumb-border-radius: 100%;
+$thumb-width: 16px;
+$thumb-height: 16px;
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* Standard code to allow range bar customization */
+input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+
+
+/* Thumb style */
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: $thumb-height;
+    width: $thumb-width;
+    border: $thumb-border;
+    border-radius: $thumb-border-radius;
+    background: $thumb-color;
+    cursor: pointer;
+    margin-top: -7px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+    height: $thumb-height;
+    width: $thumb-width;
+    border: $thumb-border;
+    border-radius: $thumb-border-radius;
+    background: $thumb-color;
+    cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+    height: $thumb-height;
+    width: $thumb-width;
+    border: $thumb-border;
+    border-radius: $thumb-border-radius;
+    background: $thumb-color;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Track style */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: $track-height;
+    cursor: pointer;
+    background: $track-color;
+    border-radius: $track-border-radius;
+ 
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background:$track-color;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: $track-height;
+    cursor: pointer;
+    background: $track-color;
+    border-radius: $track-border-radius;
+  
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: $track-height;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: $track-color;
+    border-radius: $track-border-radius;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: $track-color;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: $track-color;
+    border-radius: $track-border-radius;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: $track-color;
+}
+
+// Buttons
+/* Style buttons */
+.btn-playpause {
+    background-color: $thumb-color; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 16px 16px; /* Some padding */
+
+    width: 60px;
+    height: 60px;
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 50%;
+    text-align: center;
+  }
+
+
+
+  .btn-skip {
+    background-color: white; /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(2, 4, 90); /* White text */
+    padding: 16px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    width: 70px;
+    height: 70px;
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 50%;
+    text-align: center;
+  }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.song-player-container {
+  width: 300px;
+  margin: auto;
+    
+}
+
+.fa-play {
+    margin-left: 5px;
+}
+
+.volume_controls {
+    width: 150px;
+    margin: auto;
+}

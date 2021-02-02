@@ -21,7 +21,7 @@
 
         <br />
              
-        <div id="seekbar"  class="song-player-container">
+        <div id="seekbar" class="song-player-container">
                
           <input
             type="range"
@@ -29,16 +29,21 @@
             id="seek"
             value="0"
             max=""
-        
           />
-               
+           
+          <div class="slider-container">
+            <div class="current-time">00:00</div>
+
+            <div class="total-duration">00:00</div>
+          </div>
+             
         </div>
               <br />
                    
         <div class="playback_controls">
                
           <button onclick="skip('back')" class="btn btn-skip">
-            <i class="fa fa-backward "></i>
+            <i class="fa fa-backward"></i>
           </button>
 
                

@@ -183,3 +183,14 @@ input[type=range]:focus::-ms-fill-upper {
     width: 150px;
     margin: auto;
 }
+
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .current-time, .total-duration {
+    display: inline;
+    color: $track-color;
+    font-family: sans-serif;
+  }

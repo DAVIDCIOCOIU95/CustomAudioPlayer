@@ -4,6 +4,9 @@ var vol = 1;
 song.type = 'audio/mpeg';
 song.src = "./song.mp3";//Audio file source url
 
+let curr_time = document.querySelector(".current-time"); 
+let total_duration = document.querySelector(".total-duration");
+
 function skip(time) {
    if (time == 'back') {
      song.currentTime = (song.currentTime - 5);
@@ -14,8 +17,11 @@ function skip(time) {
 function playpause() {
   if (!song.paused) {
     song.pause();
+document.querySelector(".btn-playpause").innerHTML = '<i class="fa fa-play fa-2x"></i>';
+
   } else {
     song.play();
+document.querySelector(".btn-playpause").innerHTML = '<i class="fa fa-pause fa-2x"></i>';
   }
 }
 function stop() {
@@ -45,4 +51,20 @@ song.addEventListener('timeupdate',function() {
   curtime = parseInt(song.currentTime,10);
   document.getElementById('seek').max = song.duration;
   document.getElementById('seek').value = curtime;
+
+// Calculate the time left and the total duration 
+let currentMinutes = Math.floor(song.currentTime / 60); 
+let currentSeconds = Math.floor(song.currentTime - currentMinutes * 60); 
+let durationMinutes = Math.floor(song.duration / 60); 
+let durationSeconds = Math.floor(song.duration - durationMinutes * 60); 
+
+// Add a zero to the single digit time values 
+if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; } 
+if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; } 
+if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; } 
+if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; } 
+
+
+  document.querySelector(".total-duration").innerHTML = durationMinutes +':'+ durationSeconds;
+  document.querySelector(".current-time").innerHTML = currentMinutes +':'+ currentSeconds;
 })

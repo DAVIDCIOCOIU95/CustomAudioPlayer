@@ -3,10 +3,17 @@ $track-height: 3.2px;
 $track-border-radius: 10px;
 
 $thumb-color:#FD6D04;
-$thumb-border: 2.5px solid white;
+$thumb-border: 2px solid white;
 $thumb-border-radius: 100%;
 $thumb-width: 16px;
 $thumb-height: 16px;
+
+
+* {
+    :focus {
+        outline: none;
+    }
+}
 
 body {
     background-color: rgb(255, 255, 255);
@@ -55,7 +62,11 @@ input[type=range]::-webkit-slider-thumb {
     background: $thumb-color;
     cursor: pointer;
     margin-top: -7px;
+
     /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 /* All the same stuff for Firefox */
@@ -89,11 +100,11 @@ input[type=range]::-webkit-slider-runnable-track {
     cursor: pointer;
     background: $track-color;
     border-radius: $track-border-radius;
- 
+
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background:$track-color;
+    background: $track-color;
 }
 
 input[type=range]::-moz-range-track {
@@ -102,7 +113,7 @@ input[type=range]::-moz-range-track {
     cursor: pointer;
     background: $track-color;
     border-radius: $track-border-radius;
-  
+
 }
 
 input[type=range]::-ms-track {
@@ -136,43 +147,72 @@ input[type=range]:focus::-ms-fill-upper {
 // Buttons
 /* Style buttons */
 .btn-playpause {
-    background-color: $thumb-color; /* Blue background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 16px 16px; /* Some padding */
+    background-color: $thumb-color;
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 10px 10px;
+    /* Some padding */
 
-    width: 60px;
-    height: 60px;
-    cursor: pointer; /* Mouse pointer on hover */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    /* Mouse pointer on hover */
     border-radius: 50%;
     text-align: center;
-  }
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        transform: scale(1.01);
+    }
+}
 
 
 
-  .btn-skip {
-    background-color: white; /* Blue background */
-    border: none; /* Remove borders */
-    color: rgb(2, 4, 90); /* White text */
-    padding: 16px 16px; /* Some padding */
-    font-size: 16px; /* Set a font size */
-    width: 70px;
-    height: 70px;
-    cursor: pointer; /* Mouse pointer on hover */
+.btn-skip {
+    background-color: white;
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: rgb(2, 4, 90);
+    /* White text */
+    padding: 0;
+    /* Some padding */
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    /* Mouse pointer on hover */
     border-radius: 50%;
     text-align: center;
-  }
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        color: white;
+        background-color: rgb(2, 4, 90);
+    }
+}
+
+.fa-backward {
+    margin-right: 3px;
+}
+
+.fa-forward {
+    margin-left: 3px;
+}
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .song-player-container {
-  width: 300px;
-  margin: auto;
-    
+    width: 400px;
+    margin: auto;
+
 }
 
 .fa-play {
@@ -182,15 +222,24 @@ input[type=range]:focus::-ms-fill-upper {
 .volume_controls {
     width: 150px;
     margin: auto;
+    margin-top: 1px;
 }
 
 .slider-container {
+    p {
+        margin: 0;
+    }
+
     display: flex;
     justify-content: space-between;
-  }
-  
-  .current-time, .total-duration {
+    margin-top: 10px;
+}
+
+.current-time,
+.total-duration {
     display: inline;
     color: $track-color;
-    font-family: sans-serif;
-  }
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+}

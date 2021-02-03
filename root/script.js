@@ -4,8 +4,21 @@ var vol = 1;
 song.type = 'audio/mpeg';
 song.src = "./song.mp3";//Audio file source url
 
-let curr_time = document.querySelector(".current-time"); 
-let total_duration = document.querySelector(".total-duration");
+
+// // Get all players
+// let myArray = document.querySelectorAll('.song-player');
+
+// myArray.forEach(element => {
+//    var elementId = element.id;
+//    console.log(elementId)
+
+//    // Create new Audios 
+// //    [elementId] = new Audio;
+// //    [elementId].src = './'+elementId;
+// //    console.log([elementId].src)
+// });
+// // Init Function
+
 
 function skip(time) {
    if (time == 'back') {
@@ -47,6 +60,8 @@ function setVolume(volume) {
   song.volume = volume;
   vol = volume;
 }
+
+
 song.addEventListener('timeupdate',function() {
   curtime = parseInt(song.currentTime,10);
   document.getElementById('seek').max = song.duration;

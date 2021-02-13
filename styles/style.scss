@@ -3,10 +3,10 @@ $track-height: 1.5px;
 $track-border-radius: 10px;
 
 $thumb-color:#FD6D04;
-$thumb-border: 2px solid white;
+$thumb-border: 0;
 $thumb-border-radius: 100%;
-$thumb-width: 16px;
-$thumb-height: 16px;
+$thumb-width: 10px;
+$thumb-height: 10px;
 
 
 body {
@@ -66,7 +66,7 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: $thumb-border-radius;
     background: $thumb-color;
     cursor: pointer;
-    margin-top: -7px;
+    margin-top: -4px;
 
     /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
     &:hover {

@@ -247,16 +247,22 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .songs-container {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
 }
 
 .song-item {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     .podcast-button {
         display: grid;
         width: 70px;
@@ -265,7 +271,6 @@ input[type=range]:focus::-ms-fill-upper {
         background-color: #FD6D04;
         justify-items: center;
         align-items: center;
-        margin: auto;
         padding: auto;
         letter-spacing: 0.8px;
         color: white;

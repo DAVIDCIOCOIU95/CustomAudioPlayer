@@ -234,6 +234,20 @@ input[type=range]:focus::-ms-fill-upper {
   font-weight: 400;
 }
 
+.speed_controls {
+  margin-top: 10px;
+}
+
+.speed_controls i {
+  color: #FD6D04;
+}
+
+.speed_controls select {
+  background-color: #FD6D04;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
 .songs-container {
   display: -ms-grid;
   display: grid;

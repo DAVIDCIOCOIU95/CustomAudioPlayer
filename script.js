@@ -92,10 +92,10 @@ function setPos(pos) {
   song.currentTime = pos;
 }
 
-function setVolume(volume) {
-  song.volume = volume;
-  vol = volume;
-}
+// function setVolume(volume) {
+//   song.volume = volume;
+//   vol = volume;
+// }
 
 function setSpeed(speed) {
   song.playbackRate = speed;

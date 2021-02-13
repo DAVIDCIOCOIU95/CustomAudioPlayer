@@ -1,5 +1,5 @@
-$track-color: #222268;
-$track-height: 3.2px;
+$track-color: #ffffff;
+$track-height: 1.5px;
 $track-border-radius: 10px;
 
 $thumb-color:#FD6D04;
@@ -11,6 +11,7 @@ $thumb-height: 16px;
 
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0;
 }
 
 * {
@@ -204,7 +205,14 @@ input[type=range]:focus::-ms-fill-upper {
     margin-left: 3px;
 }
 
+.audio-player {
+    position: sticky;
+    width: 100%;
+    bottom:0;
+}
+
 .container-song-player {
+   background-color: #22292F;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,9 +220,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .song-player-container {
-    width: 70%;
+    width: 95%;
     margin: auto;
-
 }
 
 .fa-play {
